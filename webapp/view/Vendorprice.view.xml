@@ -1,0 +1,55 @@
+<mvc:View 
+    xmlns:core="sap.ui.core"
+	controllerName="project.salesfiori.controller.Vendorprice"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f"
+    displayBlock="true"
+	xmlns:l="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic">	
+	
+		<Panel id="panelForGridList" backgroundDesign="Transparent">
+			<headerToolbar>
+				<Toolbar id="_IDGenToolbar1" height="3rem">
+					<Title id="_IDGenTitle1" text="Vender Price Comparisom" />
+				</Toolbar>
+			</headerToolbar>
+		<Panel id="panel">
+				<Button id="back" text="Back" press=".back"></Button>
+		</Panel>
+		<f:GridList id="gridList" items="{oJSONModel>/}">
+			<f:GridListItem id="_IDGenGridListItem1">
+				<VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+					<layoutData>
+						<FlexItemData id="_IDGenFlexItemData1" growFactor="1" shrinkFactor="0" /> 
+					</layoutData>
+					<Title id="_IDGenTitle2" text="vender {oJSONModel>Vend1}" wrapping="true" />
+					<Text id="_IDGenText1" text="${oJSONModel>Vend2}"></Text>
+					<Text id="_IDGenText2" text="${oJSONModel>Vend3}"></Text>
+					<Text id="_IDGenText3" text="${oJSONModel>Vend4}"></Text>
+					<Text id="_IDGenText4" text="Total ${oJSONModel>Vend5}"></Text>	
+					
+
+				</VBox>
+			</f:GridListItem>
+			
+		</f:GridList>
+	</Panel>
+		Note:  <TextArea  value="" placeholder="Add Note(optional)" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginEnd"></TextArea>
+<Button
+	activeIcon="submit"
+	ariaHasPopup="None"
+	enabled="true"
+	icon="empty string"
+	iconDensityAware="true"
+	iconFirst="true"
+	text="submit"
+	textDirection="Inherit"
+	type="Default"
+	width=""
+	press=".onsubmitalert"
+>
+	
+</Button>
+</mvc:View>

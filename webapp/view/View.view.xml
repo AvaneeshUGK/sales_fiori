@@ -1,0 +1,8 @@
+<mvc:View controllerName="project.salesfiori.controller.View"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        
+        <TextArea text="" placeholder="Enter Your Name" value="this Is View Page"></TextArea>
+    </Page>
+</mvc:View>

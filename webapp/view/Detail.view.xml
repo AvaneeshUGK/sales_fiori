@@ -1,0 +1,122 @@
+<mvc:View controllerName="project.salesfiori.controller.Detail"
+	xmlns="sap.m" 
+    displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Shell >
+		<App id="App1" busy="{appView>/busy}" class="sapUiSizeCompact">
+			<pages>
+				<Page id="Page1" title="{i18n>VendorComparision}">
+					<content>
+						<Table id="table" 	
+						growing="true" 
+						items="{oJSONModel>/}">
+							<headerToolbar>
+								<OverflowToolbar id="OverflowToolbar1">
+									<content>
+									  <Button id="back" type="Up" press=".onNavBack" />
+                                        <Button id="Version" text="Version" press=".fetchversion"/>
+											<Button id="Button1" text="{i18n>Preview}" press=".onPreview">
+												<layoutData>
+													<OverflowToolbarLayoutData id="OverflowToolbarLayoutData1" priority="NeverOverflow"/>
+												</layoutData>
+											</Button>
+                                                </content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column id="userNameColumn">
+												<Text id="Text1" text="{i18n>Item_Name}"/>
+											</Column>
+											<Column id="firstNameColumn">
+												<Text id="Text2" text="{i18n>Desc}"/>
+											</Column>
+											<Column id="lastNameColumn" >
+												<Text id="Text3" text="{i18n>Quant}" textAlign="Begin"/>
+											</Column>
+											<Column id="ageColumn">
+												<Text id="Text4" text="{i18n>Vendor1}"/>
+											</Column>
+											<Column id="userNameColumn2">
+												<Text id="Text5" text="{i18n>Vendor2}"/>
+											</Column>
+											<Column id="userNameColumn3">
+												<Text id="Text6" text="{i18n>Vendor3}"/>
+											</Column>
+											<Column id="userNameColumn4">
+												<Text id="Text7" text="{i18n>Vendor4}"/>
+											</Column>
+											<Column id="userNameColumn5">
+												<Text id="Text8" text="{i18n>Vendor5}"/>
+											</Column>
+											
+											<Column id="userNameColumn7">
+												<Text id="Text10" text="{i18n>}"/>
+											</Column>
+											<Column id="userNameColumn8">
+												<Text id="Text11" text="{i18n>}"/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem id="ColumnListItem1">
+												<cells>
+													<Text id="Text12" text="{oJSONModel>Itemname}" />
+												</cells>
+												<cells>
+													<Text id="Text13" text="{oJSONModel>Description}"/>
+												</cells>
+												<cells>
+													<Text id="Text14" text="{oJSONModel>Quantity}" textAlign="Right" class="dig"/>
+												</cells>
+												<cells>
+													<Text id="Text15" text="{oJSONModel>Vend1}" />
+												</cells>
+												<cells>
+													<Text id="Text16" text="{oJSONModel>Vend2}" class="dig1"/>
+												</cells>
+												<cells>
+													<Text id="Text17" text="{oJSONModel>Vend3}" class="dig1"/>
+												</cells>
+												<cells>
+													<Text id="Text18" text="{oJSONModel>Vend4}" class="dig1"/>
+												</cells>
+												<cells>
+													<Text id="Text19" text="{oJSONModel>Vend5}" class="dig1"/>
+												</cells>
+
+												<Button
+														id="EditButton"
+														class="img"
+														icon="sap-icon://add"
+														tooltip="{i18n>questions}"
+														press=".gotoquestions">
+														<layoutData>
+															<OverflowToolbarLayoutData id="OverflowToolbarLayoutData2" priority="NeverOverflow"/>
+														</layoutData>
+													</Button>
+													<Button
+														id="save2"
+														icon="sap-icon://save"
+														tooltip="{i18n>Save}"
+														press=".onSave">														
+													</Button>
+											</ColumnListItem>
+										</items>
+
+									</Table>
+                    <Button id="Version1" text="Add New Row" press=".onCreate"/>
+											
+					</content>
+					<footer>
+						<Toolbar id="Toolbar1" visible="{appView>/hasUIChanges}">
+							<ToolbarSpacer id="ToolbarSpacer1"/>
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

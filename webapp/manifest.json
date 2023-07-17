@@ -1,0 +1,197 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "project.salesfiori",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.10.1",
+            "toolsId": "7b8f52a8-d2af-473d-a922-dd3c67453fb7"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "intent": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "salesfiori",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        } ,  
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/Z_SOURCE_EVENT_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.115.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "project.salesfiori.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "project.salesfiori.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                  "name": "overview",
+                  "pattern": "overview",
+                  "target": "overview"
+                },
+                { 
+                  "name": "detail",
+                  "pattern": "detail",
+                  "target": "detail"
+                },
+                { 
+                  "name": "view",
+                  "pattern": "view",
+                  "target": "view"
+                },
+                {
+                    "name": "questions",
+                    "pattern": "questions",
+                    "target": "questions"
+                },
+                {
+                    "name": "vendorprice",
+                    "pattern": "vendorprice",
+                    "target": "vendorprice"
+                  },
+                  {
+                    "name": "version",
+                    "pattern": "version",
+                    "target": "version"
+                  },
+                  {
+                    "name": "empty",
+                    "pattern": "empty",
+                    "target": "empty"
+                  }
+        
+              ],
+              "targets": {
+                "overview": {
+                  "viewType": "XML", 
+                  "viewId": "overview",
+                  "viewName": "Overview"
+                },
+                "detail": {
+                  "viewType": "XML", 
+                  "viewId": "detail",
+                  "viewName": "Detail"
+                },
+                "view": {
+                  "viewType": "XML", 
+                  "viewId": "view",
+                  "viewName": "View"
+                },
+                "questions": {
+                    "viewType": "XML",
+                    "viewId": "questions",
+                    "viewName": "Questions"
+                  },
+                  "vendorprice": {
+                    "viewType": "XML",
+                    "viewId": "vendorprice",
+                    "viewName": "Vendorprice"
+                  },
+                  "version": {
+                    "viewType": "XML",
+                    "viewId": "version",
+                    "viewName": "Version"
+                  },
+                  "empty":{
+                    "viewType": "XML",
+                    "viewId": "empty",
+                    "viewName": "Empty"
+                  }
+              }
+        },
+        "rootView": {
+            "viewName": "project.salesfiori.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "projectsalesfiori"
+    }
+}

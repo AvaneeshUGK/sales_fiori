@@ -1,0 +1,82 @@
+<mvc:View controllerName="project.salesfiori.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m">
+        <Shell id="Shell1">
+        <App id="app">
+            <pages>
+                <Page id="page" title="Sourcing Event">
+            <content>     
+                <Table id="List" growing="true" growingThreshold="10" items="{oJSONModel>/}">
+            	<headerToolbar>
+                <OverflowToolbar id="q">
+                <content>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <HBox id="VBox1" justifyContent="End" alignItems="End" height="100%">
+				<SearchField id="SearchField1" width="100%" search=".onSearch" />
+		            <!-- <SearchField id="SearchField2" width="100%" class="sapUiSmallMargin" /> -->
+                    <Button id="b" icon="sap-icon://">
+						<layoutData>
+						    <OverflowToolbarLayoutData id="OverflowToolbarLayoutData1" priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+                </HBox>                                    
+                </content>   
+                   
+                </OverflowToolbar>
+            	</headerToolbar>
+                <columns>
+			    <Column id="Column1">
+			    	<Text id="Itemname" text="Source Event Name"/>
+			    </Column>
+                <Column id="Descrip">
+			    	<Text id="Description" text="Description"/>
+			    </Column>
+                 <Column id="Descrip1">
+			    	<Text id="Description1" text="Created By"/>
+			    </Column>
+                <Column id="Descrip2">
+			    	<Text id="Description2" text="Status"/>
+			    </Column>
+                <Column id="Descrip3">
+			    	<Text id="Description3" text="Version"/>
+			    </Column>
+                <Column id="Descrip4">   
+                </Column>
+                </columns>    
+               
+                <items>
+					<ColumnListItem id="ColumnListItem1">
+						<cells>
+						    <Text id="Text1" text="{oJSONModel>Srcevtname}"/>
+						</cells>
+                        <cells>
+						    <Text id="Text2" text="{oJSONModel>Desc}"/>
+						</cells>
+                        <cells>
+						    <Text id="Text3" text="{oJSONModel>Createdby}"/>
+						</cells>
+                        <cells>
+						    <Text id="Text4" text="{oJSONModel>Status}"/>
+						</cells>
+                        <cells>
+						    <Button id="butt" text="{oJSONModel>Version}" press=".fetchversion" type="Emphasized"></Button>
+						</cells>
+                        <cells>
+                            <Button id="icon1" icon="sap-icon://show" press=".detail" type="Emphasized"></Button>
+                        </cells>   
+                    </ColumnListItem>
+				</items>              
+            </Table>     
+        </content>
+        <footer>
+			<Toolbar id="Toolbar1" visible="{appView>/hasUIChanges}">
+				<ToolbarSpacer id="ToolbarSpacer1"/>
+			</Toolbar>
+		</footer>
+        </Page>
+        </pages>
+        </App>
+    </Shell>
+</mvc:View>
